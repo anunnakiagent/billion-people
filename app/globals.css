@@ -2,10 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Custom neil.fun inspired styling */
+/* neil.fun brutalist aesthetic */
 
 body {
-  font-family: 'Arial', 'Helvetica', sans-serif;
+  font-family: 'Arial Black', 'Helvetica Neue', Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -32,62 +32,127 @@ body {
   border: 6px solid #000;
 }
 
-/* Hover effect for buttons */
-.btn-hover {
-  transition: all 0.1s ease;
+/* Brutalist button hover effect */
+.btn-brutalist {
+  transition: all 0.15s ease;
+  box-shadow: 6px 6px 0 0 #000;
 }
 
-.btn-hover:hover {
-  transform: translate(4px, 4px);
-  box-shadow: 0 0 0 0 #000;
+.btn-brutalist:hover {
+  transform: translate(6px, 6px);
+  box-shadow: 0px 0px 0 0 #000;
+}
+
+.btn-brutalist:active {
+  transform: translate(3px, 3px);
+  box-shadow: 3px 3px 0 0 #000;
+}
+
+/* Brutalist card hover */
+.card-brutalist {
+  transition: all 0.2s ease;
+}
+
+.card-brutalist:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 10px 10px 0 0 #000;
+}
+
+/* Marquee animation */
+@keyframes marquee {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+.animate-marquee {
+  animation: marquee 20s linear infinite;
+}
+
+/* Pulse animation for important elements */
+@keyframes pulse-brutalist {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+.pulse-brutalist {
+  animation: pulse-brutalist 2s ease-in-out infinite;
+}
+
+/* Bounce animation */
+@keyframes bounce-brutalist {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.bounce-brutalist {
+  animation: bounce-brutalist 1s ease-in-out infinite;
+}
+
+/* Wiggle animation */
+@keyframes wiggle {
+  0%, 100% { transform: rotate(-3deg); }
+  50% { transform: rotate(3deg); }
+}
+
+.wiggle {
+  animation: wiggle 0.5s ease-in-out infinite;
 }
 
 /* Smooth transitions */
 * {
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, transform;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
 }
 
-/* Custom scrollbar */
+/* Custom scrollbar - brutalist style */
 ::-webkit-scrollbar {
-  width: 12px;
+  width: 16px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
-  border-left: 3px solid #000;
+  background: #fff;
+  border-left: 4px solid #000;
 }
 
 ::-webkit-scrollbar-thumb {
   background: #000;
-  border: 2px solid #f1f1f1;
+  border: 3px solid #fff;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #333;
+  background: #e53e3e;
 }
 
-/* Animations */
-@keyframes slideIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+/* Text selection */
+::selection {
+  background: #ffd700;
+  color: #000;
 }
 
-.animate-slide-in {
-  animation: slideIn 0.3s ease-out;
+/* Focus styles */
+input:focus, button:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px #ffd700;
 }
 
-/* Gradient text */
-.gradient-text {
-  background: linear-gradient(135deg, #FF6B6B 0%, #4ECDC4 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+/* Brutalist badge */
+.badge-brutalist {
+  display: inline-block;
+  padding: 4px 12px;
+  background: #ffd700;
+  border: 3px solid #000;
+  font-weight: 900;
+  font-size: 14px;
+  box-shadow: 3px 3px 0 0 #000;
+}
+
+/* Loading spinner brutalist style */
+@keyframes spin-brutalist {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.spinner-brutalist {
+  animation: spin-brutalist 1s linear infinite;
 }
